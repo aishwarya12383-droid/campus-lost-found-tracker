@@ -1,0 +1,349 @@
+:root {
+  /* Color system */
+  --primary-50: #eef5ff;
+  --primary-100: #d9e8ff;
+  --primary-200: #bcd7ff;
+  --primary-300: #8ebeff;
+  --primary-400: #599aff;
+  --primary-500: #2b76f0;
+  --primary-600: #1a5fd8;
+  --primary-700: #174ab0;
+  --primary-800: #163f8a;
+  --primary-900: #14366e;
+
+  --found-50: #ecfdf5;
+  --found-100: #d1fae5;
+  --found-400: #34d399;
+  --found-500: #10b981;
+  --found-600: #059669;
+  --found-700: #047857;
+
+  --lost-50: #fff7ed;
+  --lost-100: #ffedd5;
+  --lost-400: #fb923c;
+  --lost-500: #f97316;
+  --lost-600: #ea580c;
+  --lost-700: #c2410c;
+
+  --danger-500: #ef4444;
+  --danger-600: #dc2626;
+
+  --warning-500: #f59e0b;
+
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  /* Status colors */
+  --status-open: #2563eb;
+  --status-open-bg: #dbeafe;
+  --status-matched: #d97706;
+  --status-matched-bg: #fef3c7;
+  --status-returned: #059669;
+  --status-returned-bg: #d1fae5;
+
+  --white: #ffffff;
+  --sidebar-bg: #1a5fd8;
+  --sidebar-active: #14366e;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  --font-body: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --font-heading: 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--neutral-100);
+  color: var(--neutral-800);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--neutral-900);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* ===== Layout ===== */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.page-container {
+  padding: 32px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: var(--neutral-500);
+  font-size: 0.95rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary-600);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--neutral-200);
+  color: var(--neutral-700);
+}
+.btn-secondary:hover {
+  background: var(--neutral-300);
+}
+
+.btn-danger {
+  background: var(--danger-500);
+  color: var(--white);
+}
+.btn-danger:hover {
+  background: var(--danger-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--neutral-300);
+  color: var(--neutral-700);
+}
+.btn-outline:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Form ===== */
+.form-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  max-width: 720px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: 6px;
+}
+
+.form-group label .req {
+  color: var(--danger-500);
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--neutral-300);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--neutral-800);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.form-control::placeholder {
+  color: var(--neutral-400);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-error {
+  color: var(--danger-600);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border-radius: var(--radius-sm);
+  border: 1px solid #fecaca;
+}
+
+/* ===== Badges ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-lost {
+  background: var(--lost-100);
+  color: var(--lost-700);
+}
+
+.badge-found {
+  background: var(--found-100);
+  color: var(--found-700);
+}
+
+.badge-status-open {
+  background: var(--status-open-bg);
+  color: var(--status-open);
+}
+.badge-status-matched {
+  background: var(--status-matched-bg);
+  color: var(--status-matched);
+}
+.badge-status-returned {
+  background: var(--status-returned-bg);
+  color: var(--status-returned);
+}
+
+.badge-category {
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+}
+
+/* ===== Empty & loading states ===== */
+.empty-state,
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--neutral-400);
+}
+
+.empty-state h3 {
+  color: var(--neutral-500);
+  margin-bottom: 8px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;
+  }
+  .page-container {
+    padding: 20px 16px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

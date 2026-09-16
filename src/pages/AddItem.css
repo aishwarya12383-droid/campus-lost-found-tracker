@@ -1,0 +1,39 @@
+.type-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.type-btn:hover {
+  background: var(--neutral-200);
+}
+
+.type-btn.active.lost {
+  background: var(--lost-100);
+  color: var(--lost-700);
+  border-color: var(--lost-500);
+}
+
+.type-btn.active.found {
+  background: var(--found-100);
+  color: var(--found-700);
+  border-color: var(--found-500);
+}
+
+.field-error {
+  display: block;
+  color: var(--danger-600);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
